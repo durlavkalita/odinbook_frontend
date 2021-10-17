@@ -41,10 +41,16 @@ export default {
   methods: {
       async loginUser() {
           try {
-              let response = await axios.post('http://localhost:3000/api/login', {email: this.email, password: this.password});
+              if(localStorage.getItem('token') != null){
+                localStorage.removeItem('odinbook_token');
+                localStorage.removeItem('odinbook_user');
+              }
+              let response = await axios.post('http://localhost:3000/login', {email: this.email, password: this.password});
               let token = response.data.token;
+              let user = response.data.body._id;
               localStorage.setItem('odinbook_token', token);
-              console.log(token);
+              localStorage.setItem('odinbook_user', user);
+              this.$router.push('/home');
           } catch (error) {
               console.log(error.response);
           }

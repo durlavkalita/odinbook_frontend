@@ -1,13 +1,4 @@
 <template>
-  <div class="hidden lg:block col-span-2">
-      <div class="flex items-center py-2 px-1">
-          <div>
-              <img class="h-6 rounded-full" src="https://i.pravatar.cc/300" alt="avatar">
-          </div>
-          <div class="ml-2">
-              <p class="font-semiboldbold">John Doe</p>
-          </div>
-      </div>
       <div class="pt-2">
         <div class="flex items-center justify-between p-1 border bg-gray-50 rounded-sm">
           <div>
@@ -83,7 +74,6 @@
           <span class="ml-2 text-sm text-blue-500">See More...</span>
         </div>
       </div>
-    </div>
 </template>
 
 <script>
